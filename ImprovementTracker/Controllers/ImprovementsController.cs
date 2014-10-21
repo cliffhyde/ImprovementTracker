@@ -17,7 +17,7 @@ namespace ImprovementTracker.Controllers
         // GET: Improvements
         public ActionResult Index()
         {
-            return View(db.Improvements.ToList());
+            return View(Improvement.GetOrderedImprovement(db));
         }
 
         // GET: Improvements/Details/5
@@ -38,6 +38,7 @@ namespace ImprovementTracker.Controllers
         // GET: Improvements/Create
         public ActionResult Create()
         {
+            ViewBag.StatusList = new SelectList(db.Statuses, "Id", "StatusName");
             return View();
         }
 
@@ -46,7 +47,7 @@ namespace ImprovementTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Description,Status")] Improvement improvement)
+        public ActionResult Create([Bind(Include = "Id,Description,StatusId")] Improvement improvement)
         {
             if (ModelState.IsValid)
             {
@@ -54,13 +55,15 @@ namespace ImprovementTracker.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.StatusList = new SelectList(db.Statuses, "Id", "StatusName");
             return View(improvement);
         }
 
         // GET: Improvements/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.StatusList = new SelectList(db.Statuses, "Id", "StatusName"); 
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -78,7 +81,7 @@ namespace ImprovementTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Description,Status")] Improvement improvement)
+        public ActionResult Edit([Bind(Include = "Id,Description,StatusId")] Improvement improvement)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +89,7 @@ namespace ImprovementTracker.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.StatusList = new SelectList(db.Statuses, "Id", "StatusName");
             return View(improvement);
         }
 

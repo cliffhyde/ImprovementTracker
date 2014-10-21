@@ -126,9 +126,31 @@
     <Compile Include="Migrations\201410141035474_InitialCreate.Designer.cs">
       <DependentUpon>201410141035474_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410210854119_AddComments.cs" />
+    <Compile Include="Migrations\201410210854119_AddComments.Designer.cs">
+      <DependentUpon>201410210854119_AddComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410210901537_ExtendCommentsText.cs" />
+    <Compile Include="Migrations\201410210901537_ExtendCommentsText.Designer.cs">
+      <DependentUpon>201410210901537_ExtendCommentsText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410210904344_ShrinkCommentsText.cs" />
+    <Compile Include="Migrations\201410210904344_ShrinkCommentsText.Designer.cs">
+      <DependentUpon>201410210904344_ShrinkCommentsText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410210953031_AddStatusTable.cs" />
+    <Compile Include="Migrations\201410210953031_AddStatusTable.Designer.cs">
+      <DependentUpon>201410210953031_AddStatusTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410211037065_UpdateImprovementDesc.cs" />
+    <Compile Include="Migrations\201410211037065_UpdateImprovementDesc.Designer.cs">
+      <DependentUpon>201410211037065_UpdateImprovementDesc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Improvement.cs" />
     <Compile Include="Models\ImprovementTrackerContext.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +208,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201410141035474_InitialCreate.resx">
       <DependentUpon>201410141035474_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410210854119_AddComments.resx">
+      <DependentUpon>201410210854119_AddComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410210901537_ExtendCommentsText.resx">
+      <DependentUpon>201410210901537_ExtendCommentsText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410210904344_ShrinkCommentsText.resx">
+      <DependentUpon>201410210904344_ShrinkCommentsText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410210953031_AddStatusTable.resx">
+      <DependentUpon>201410210953031_AddStatusTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410211037065_UpdateImprovementDesc.resx">
+      <DependentUpon>201410211037065_UpdateImprovementDesc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
