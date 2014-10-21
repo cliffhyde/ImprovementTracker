@@ -14,7 +14,9 @@ namespace ImprovementTracker.Models
         public string Description { get; set; }
         public virtual Status Status { get; set; }
         public int StatusId { get; set; }
-        
+
+        public int? Rating { get; set; }
+
         public static List<Improvement> GetOrderedImprovement(ImprovementTrackerContext db)
         {
             return db.Improvements

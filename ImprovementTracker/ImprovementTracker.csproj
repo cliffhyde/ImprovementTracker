@@ -146,6 +146,14 @@
     <Compile Include="Migrations\201410211037065_UpdateImprovementDesc.Designer.cs">
       <DependentUpon>201410211037065_UpdateImprovementDesc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410211539370_AddImprovementRating.cs" />
+    <Compile Include="Migrations\201410211539370_AddImprovementRating.Designer.cs">
+      <DependentUpon>201410211539370_AddImprovementRating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410211543108_AddImprovementRating2.cs" />
+    <Compile Include="Migrations\201410211543108_AddImprovementRating2.Designer.cs">
+      <DependentUpon>201410211543108_AddImprovementRating2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Improvement.cs" />
@@ -223,6 +231,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201410211037065_UpdateImprovementDesc.resx">
       <DependentUpon>201410211037065_UpdateImprovementDesc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410211539370_AddImprovementRating.resx">
+      <DependentUpon>201410211539370_AddImprovementRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410211543108_AddImprovementRating2.resx">
+      <DependentUpon>201410211543108_AddImprovementRating2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
