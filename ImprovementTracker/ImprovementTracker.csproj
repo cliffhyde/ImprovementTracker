@@ -201,7 +201,7 @@
     <Content Include="Views\Improvements\Delete.cshtml" />
     <Content Include="Views\Improvements\Details.cshtml" />
     <Content Include="Views\Improvements\Edit.cshtml" />
-    <Content Include="Views\Shared\Index.cshtml" />
+    <Content Include="Views\Improvements\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
