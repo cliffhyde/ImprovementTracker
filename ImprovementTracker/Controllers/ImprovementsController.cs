@@ -15,12 +15,14 @@ namespace ImprovementTracker.Controllers
         private ImprovementTrackerContext db = new ImprovementTrackerContext();
 
         // GET: Improvements
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            return View(Improvement.GetOrderedImprovement(db));
+            var improvements = Improvement.GetOrderedImprovement(db);
+            ViewBag.SelectedId = id?? improvements.First().Id;
+            return View(improvements);
         }
 
-        // GET: Improvements/Details/5
+                // GET: Improvements/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)

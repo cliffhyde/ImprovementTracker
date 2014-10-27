@@ -5,35 +5,19 @@
 }
 
 <h2>Index</h2>
-
+<div class="row">
+    <div class="col-md-4">
+        @foreach (var item in Model)
+        {
+            <div class="list-item">
+                <h4>@Html.ActionLink(item.Description,"Index",new{id=item.Id})</h4>                
+            </div>
+        } 
+    </div>
+    <div class="col-md-8">       
+          @{Html.RenderPartial("Details", Model.First(i => i.Id == ViewBag.SelectedId));}    
+    </div>
+</div>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status.StatusName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
