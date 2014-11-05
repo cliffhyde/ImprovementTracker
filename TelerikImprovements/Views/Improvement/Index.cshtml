@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TelerikImprovements.DAL.Improvement>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var imp in Model)
+{
+    <div>@imp.Description</div>
+}
+
+@*@(Html.Kendo().Grid<TelerikImprovements.DAL.Improvement>()*@
+@(Html.Kendo().Grid(Model)
+
+    .Name("Grid")
+    .Columns(columns =>
+    {
+
+        columns.Bound(c => c.Description).Width(140);
+
+        columns.Bound(c => c.Status.StatusName).Width(190);
+
+        columns.Bound(c => c.Rating).Width(110);
+
+        columns.Bound(c => c.Comments);
+    })
+    .Pageable()
+    .Resizable(c=>c.Columns(true))
+    
+    .Sortable()
+    .Scrollable(scr => scr.Height(430))
+    .Filterable()
+    //.DataSource(dataSource => dataSource
+    //    .Ajax()
+    //    .PageSize(20)
+    //    .ServerOperation(false)
+    // )
+)
+       
+
