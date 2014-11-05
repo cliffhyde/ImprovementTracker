@@ -36,4 +36,8 @@ textarea {
 .navbar .nav li a:hover {
   color: aqua;
 }
+.list-item.selected {
+  background-color: chartreuse;
+  color: purple;
+}
 /*# sourceMappingURL=Site.css.map */

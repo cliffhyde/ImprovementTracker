@@ -21,6 +21,8 @@ namespace ImprovementTracker.Models
 
         public System.Data.Entity.DbSet<ImprovementTracker.Models.Improvement> Improvements { get; set; }
         public System.Data.Entity.DbSet<ImprovementTracker.Models.Status> Statuses { get; set; }
+
+        public System.Data.Entity.DbSet<ImprovementTracker.Models.Comment> Comments { get; set; }
             
     }
 }

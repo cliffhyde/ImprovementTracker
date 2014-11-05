@@ -10,6 +10,8 @@ namespace ImprovementTracker
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/alljs").Include("~/Scripts/jquery-{version}.js",
+                "~/Scripts/bootstrap.js","~/Scripts/respond.js","~/Scripts/modernizr-*","~/Scripts/Site.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -29,7 +31,7 @@ namespace ImprovementTracker
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

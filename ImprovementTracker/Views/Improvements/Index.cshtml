@@ -8,12 +8,12 @@
     <div class="col-md-4">
         @foreach (var item in Model)
         {
-            <div class="list-item">
-                <h4>@Html.ActionLink(item.Description,"Index",new{id=item.Id})</h4>                
+            <div class="list-item" data-url=@Url.Action( "Details",new{id=item.Id}) >
+                <h4>@item.Description</h4>                
             </div>
         } 
     </div>
-    <div class="col-md-8">       
+    <div id="selectedDetail" class="col-md-8">       
           @{Html.RenderPartial("Details", Model.First(i=> i.Id==ViewBag.SelectedId));}    
     </div>
 </div>

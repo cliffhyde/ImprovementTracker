@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = null;
 }
 
 
@@ -18,6 +19,18 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+        <dd>
+            @foreach (var comment in Model.Comments)
+            {
+                <p>
+                    @comment.CommentText
+                </p>
+            }
+
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Status)
         </dt>
 
@@ -26,8 +39,8 @@
         </dd>
 
     </dl>
+
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+@Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { id = "EditTag" })
 </p>
