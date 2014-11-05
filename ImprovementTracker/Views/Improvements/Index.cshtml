@@ -8,13 +8,21 @@
     <div class="col-md-4">
         @foreach (var item in Model)
         {
-            <div class="list-item" data-url=@Url.Action( "Details",new{id=item.Id}) >
+            <div class="list-item" data-url=@Url.RouteUrl("defaultapi", new { httproute = "", controller = "ImprovementsApi", id = item.Id }) >
                 <h4>@item.Description</h4>                
             </div>
         } 
     </div>
     <div id="selectedDetail" class="col-md-8">       
-          @{Html.RenderPartial("Details", Model.First(i=> i.Id==ViewBag.SelectedId));}    
+        <dl class="dl-horizontal">
+            <dt>
+                Description
+            </dt>
+
+            <dd id="DescriptionText">
+               
+            </dd>
+        </dl>
     </div>
 </div>
 <p>

@@ -17,6 +17,7 @@ namespace ImprovementTracker.Models
     
         public ImprovementTrackerContext() : base("name=ImprovementTrackerContext")
         {
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public System.Data.Entity.DbSet<ImprovementTracker.Models.Improvement> Improvements { get; set; }

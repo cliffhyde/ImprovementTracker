@@ -19,7 +19,7 @@ namespace ImprovementTracker.Models
 
         public static List<Improvement> GetOrderedImprovement(ImprovementTrackerContext db)
         {
-            return db.Improvements
+            return db.Improvements.Include("Comments")
                 .Where(i => i.Status.IsActive)
                 .OrderByDescending(i => i.StatusId).ToList();
         }
